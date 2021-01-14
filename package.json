@@ -5,8 +5,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "analyze": "BUNDLE_ANALYZE=both yarn build",
-    "find:unused": "next-unused"
+    "find:unused": "next-unused",
+    "custom": "nodemon custom.js"
   },
   "prettier": {
     "semi": false,
@@ -52,6 +54,7 @@
     "bowser": "^2.11.0",
     "classnames": "^2.2.6",
     "email-validator": "^2.0.4",
+    "express": "^4.17.1",
     "js-cookie": "^2.2.1",
     "keen-slider": "^5.2.4",
     "lodash.random": "^3.2.0",
@@ -79,6 +82,7 @@
     "bunyan": "^1.8.14",
     "bunyan-prettystream": "^0.1.3",
     "next-unused": "^0.0.3",
+    "nodemon": "^2.0.7",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.1.2",

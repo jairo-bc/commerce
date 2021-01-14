@@ -1,7 +1,6 @@
 import { FC, useState } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
-import Image from 'next/image'
 import type { WishlistItem } from '@bigcommerce/storefront-data-hooks/api/wishlist'
 import usePrice from '@bigcommerce/storefront-data-hooks/use-price'
 import useRemoveItem from '@bigcommerce/storefront-data-hooks/wishlist/use-remove-item'
@@ -56,7 +55,7 @@ const WishlistCard: FC<Props> = ({ item }) => {
   return (
     <div className={cn(s.root, { 'opacity-75 pointer-events-none': removing })}>
       <div className={`col-span-3 ${s.productBg}`}>
-        <Image
+        <img
           src={product.images.edges?.[0]?.node.urlOriginal!}
           width={400}
           height={400}

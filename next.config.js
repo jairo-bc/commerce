@@ -3,15 +3,18 @@
 const bundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: !!process.env.BUNDLE_ANALYZE
 })
+const isProd = process.env.NODE_ENV === 'production'
+
 
 module.exports = bundleAnalyzer({
+  assetPrefix: isProd ? "http://localhost:3003/" : "",
   images: {
     domains: ['cdn11.bigcommerce.com'],
   },
-  i18n: {
-    locales: ['en-US', 'es'],
-    defaultLocale: 'en-US',
-  },
+  // i18n: {
+  //   locales: ['en-US'],
+  //   defaultLocale: 'en-US',
+  // },
   rewrites() {
     return [
       {

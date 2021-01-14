@@ -1,6 +1,5 @@
 import { FC, useState } from 'react'
 import cn from 'classnames'
-import Image from 'next/image'
 import { NextSeo } from 'next-seo'
 
 import s from './ProductView.module.css'
@@ -89,14 +88,12 @@ const ProductView: FC<Props> = ({ product }) => {
             <ProductSlider>
               {product.images.edges?.map((image, i) => (
                 <div key={image?.node.urlOriginal} className={s.imageContainer}>
-                  <Image
+                  <img
                     className={s.img}
                     src={image?.node.urlOriginal!}
                     alt={image?.node.altText || 'Product Image'}
                     width={1050}
                     height={1050}
-                    priority={i === 0}
-                    quality="85"
                   />
                 </div>
               ))}

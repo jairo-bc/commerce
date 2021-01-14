@@ -1,6 +1,5 @@
 import cn from 'classnames'
 import Link from 'next/link'
-import Image from 'next/image'
 import type { FC } from 'react'
 import s from './ProductCard.module.css'
 import WishlistButton from '@components/wishlist/WishlistButton'
@@ -50,14 +49,11 @@ const ProductCard: FC<Props> = ({
                 {p.name}
               </span>
             </div>
-            <Image
-              quality="85"
+            <img
               width={imgWidth}
               sizes={imgSizes}
               height={imgHeight}
-              layout={imgLayout}
               loading={imgLoading}
-              priority={imgPriority}
               src={p.images.edges?.[0]?.node.urlOriginal!}
               alt={p.images.edges?.[0]?.node.altText || 'Product Image'}
             />
@@ -79,17 +75,14 @@ const ProductCard: FC<Props> = ({
               />
             </div>
             <div className={s.imageContainer}>
-              <Image
-                quality="85"
+              <img
                 src={src}
                 alt={p.name}
                 className={s.productImage}
                 width={imgWidth}
                 sizes={imgSizes}
                 height={imgHeight}
-                layout={imgLayout}
                 loading={imgLoading}
-                priority={imgPriority}
               />
             </div>
           </>

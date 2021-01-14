@@ -1,6 +1,5 @@
 import { ChangeEvent, useEffect, useState } from 'react'
 import cn from 'classnames'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Trash, Plus, Minus } from '@components/icons'
 import usePrice from '@bigcommerce/storefront-data-hooks/use-price'
@@ -75,14 +74,13 @@ const CartItem = ({
       })}
     >
       <div className="w-16 h-16 bg-violet relative overflow-hidden">
-        <Image
-          className={s.productImage}
-          src={item.image_url}
+        <img
+          className={s.productimg}
+          src={item.img_url}
           width={150}
           height={150}
-          alt="Product Image"
-          // The cart item image is already optimized and very small in size
-          unoptimized
+          alt="Product img"
+          // The cart item img is already optimized and very small in size
         />
       </div>
       <div className="flex-1 flex flex-col text-base">
